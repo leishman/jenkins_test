@@ -1,0 +1,19 @@
+default: &defaults
+  adapter: mysql2
+  host: localhost
+  username: root
+  password:
+  port: 3306
+  pool: 10
+  encoding: utf8
+  reconnect: false
+
+development:
+  <<: *defaults
+  database: jenkins_dev
+
+test:
+  <<: *defaults
+  database: jenkins_test
+  pool: 30
+
